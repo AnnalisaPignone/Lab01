@@ -1,5 +1,8 @@
 package it.polito.tdp.parole.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Parole {
@@ -8,17 +11,30 @@ public class Parole {
 		//TODO
 	}
 	
-	public void addParola(String p) {
-		//TODO
+	List<String> parole = new LinkedList<String>();
+	int i; 
+
+	public void addParola(String p) 
+	{
+		parole.add(p);
+		
 	}
 	
-	public List<String> getElenco() {
-		//TODO
-		return null;
+	public List<String> getElenco() 
+	{
+		Collections.sort(parole, new Ordine() );
+		return parole;
 	}
 	
 	public void reset() {
-		// TODO
+		parole.clear();
 	}
+
+	@Override
+	public String toString() {
+		return  parole + "\n";
+	}
+	
+
 
 }
